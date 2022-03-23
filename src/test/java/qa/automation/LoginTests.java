@@ -12,6 +12,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pages.LoginPage;
+import pages.ProductsPage;
 import utils.CsvHelper;
 
 import java.io.IOException;
@@ -73,21 +75,25 @@ public class LoginTests extends TestUtil {
     public void SuccessfulLogin(String userName, String password){
 //        driver.get("https://www.saucedemo.com/");
 
-        WebElement username = driver.findElement(By.id("user-name"));
-        username.click();
-        username.sendKeys(userName);
+//        WebElement username = driver.findElement(By.id("user-name"));
+//        username.click();
+//        username.sendKeys(userName);
+//
+//        WebElement passwordInput = driver.findElement(By.xpath("(//input[@class='input_error form_input'])[2]"));
+//        passwordInput.click();
+//        passwordInput.sendKeys(password);
+//
+//        WebElement loginBtn = driver.findElement(By.cssSelector("[value=Login]"));
+//        loginBtn.click();
+//
+//        WebElement userAllPagesButton = driver.findElement(By.id("react-burger-menu-btn"));
+//        Assert.assertTrue(userAllPagesButton.isDisplayed(), "This shall be visible after successful login.");
 
-        WebElement passwordInput = driver.findElement(By.xpath("(//input[@class='input_error form_input'])[2]"));
-        passwordInput.click();
-        passwordInput.sendKeys(password);
-
-        WebElement loginBtn = driver.findElement(By.cssSelector("[value=Login]"));
-        loginBtn.click();
-
-        WebElement userAllPagesButton = driver.findElement(By.id("react-burger-menu-btn"));
-        Assert.assertTrue(userAllPagesButton.isDisplayed(), "This shall be visible after successful login.");
-
+        LoginPage loginPage = new LoginPage(driver);
+        ProductsPage productsPage = loginPage.login(userName, password);
     }
+
+
 
 }
 

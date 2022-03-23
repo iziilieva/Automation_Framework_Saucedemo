@@ -15,17 +15,17 @@ public class MyFirstTest {
 
     private WebDriver driver;
 
-    @BeforeTest
-    public void initializeDriver(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-    }
-
 //    @BeforeTest
 //    public void initializeDriver(){
-//        WebDriverManager.firefoxdriver().setup();
-//        driver = new FirefoxDriver();
+//        WebDriverManager.chromedriver().setup();
+//        driver = new ChromeDriver();
 //    }
+
+    @BeforeTest
+    public void initializeDriver(){
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver();
+    }
 
     @AfterTest
     public void tearDown(){
