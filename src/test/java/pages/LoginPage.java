@@ -27,7 +27,7 @@ public class LoginPage {
     private WebElement passwordEmptyErrorMessage;
 
     @FindBy(xpath = "//button[@class='error-button']")
-    private WebElement xButtonOfLoginErroMessages;
+    private WebElement xButtonOfLoginErrorMessages;
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
@@ -70,6 +70,6 @@ public class LoginPage {
 //            //do some needed logic here
 //            return false;
 //        }
-        return xButtonOfLoginErroMessages.isDisplayed();
+        return xButtonOfLoginErrorMessages.isDisplayed();
     }
 }
