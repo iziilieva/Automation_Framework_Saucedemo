@@ -72,4 +72,6 @@ public class LoginPage {
 //        }
         return xButtonOfLoginErrorMessages.isDisplayed();
     }
+
+    // test
 }
